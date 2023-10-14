@@ -10,14 +10,7 @@ let
     mongodb-compass
     discord
     spotify
-    # Jetbrains
-    android-studio
-    jetbrains.clion
-    jetbrains.datagrip
-    jetbrains.idea-ultimate
-    jetbrains.phpstorm
-    jetbrains.pycharm-professional
-    jetbrains.webstorm
+    jetbrains-toolbox
   ];
 
 in
@@ -122,7 +115,6 @@ in
       thunderbird
       virt-manager
       vlc
-      wireguard-tools
 
       # Terminal applications
       docker-compose
@@ -132,8 +124,6 @@ in
 
       # Editors / IDEs
       neovim
-      jetbrains.idea-community
-      jetbrains.pycharm-community
 
       # Compilers / Interpreters / Runtime
       gcc
