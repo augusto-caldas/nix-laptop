@@ -111,7 +111,6 @@ in
       mysql-workbench
       nextcloud-client
       obs-studio
-      qbittorrent
       thunderbird
       virt-manager
       vlc
@@ -132,6 +131,16 @@ in
       python3
       R
       rustc
+
+      # Gnome
+      gnome.gnome-tweaks
+      gnome-decoder
+      gnome.dconf-editor
+      drawing
+      eyedropper
+      fragments
+      komikku
+
 
     ] ++ 
     # Add the unfree packages to the user
