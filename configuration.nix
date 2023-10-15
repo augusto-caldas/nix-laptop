@@ -134,11 +134,13 @@ in
       # Gnome
       gnome.gnome-tweaks
       gnome-decoder
-      gnome.dconf-editor
       drawing
       eyedropper
+      emblem
       fragments
+      gaphor
       komikku
+      video-trimmer
 
     ] ++ 
     # Add the unfree packages to the user
@@ -148,7 +150,7 @@ in
   # Install global packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages(ps: with ps; [ numpy pandas ]))
-    tmux vim git htop
+    tmux git htop
     wget
     tree
   ];
