@@ -126,9 +126,8 @@ in
 
       # Compilers / Interpreters / Runtime
       gcc
-      jdk
+      openjdk
       nodejs
-      python3
       R
       rustc
 
@@ -141,7 +140,6 @@ in
       fragments
       komikku
 
-
     ] ++ 
     # Add the unfree packages to the user
     unfreePackages;
@@ -149,6 +147,7 @@ in
   
   # Install global packages
   environment.systemPackages = with pkgs; [
+    (python3.withPackages(ps: with ps; [ numpy pandas ]))
     tmux vim git htop
     wget
     tree
