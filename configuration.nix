@@ -39,6 +39,7 @@ in
 
   # Firewall
   networking.firewall.enable = true;
+  networking.firewall.checkReversePath = "loose";
   
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
