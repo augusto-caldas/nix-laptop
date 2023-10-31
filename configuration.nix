@@ -8,7 +8,9 @@ let
   # List of the unfree packages needed
   unfreePackages = with pkgs; [
     mongodb-compass
-    discord
+    (pkgs.discord.override {
+      withVencord = true;
+    })
     spotify
     jetbrains-toolbox
   ];
@@ -40,7 +42,7 @@ in
   # Firewall
   networking.firewall.enable = true;
   networking.firewall.checkReversePath = "loose";
-  
+
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
   
@@ -115,6 +117,7 @@ in
       thunderbird
       virt-manager
       vlc
+      wireshark
 
       # Terminal applications
       docker-compose
@@ -127,7 +130,6 @@ in
 
       # Compilers / Interpreters / Runtime
       gcc
-      openjdk
       nodejs
       R
       rustc
@@ -151,6 +153,7 @@ in
   # Install global packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages(ps: with ps; [ numpy pandas ]))
+    jdk
     tmux git htop
     wget
     tree
