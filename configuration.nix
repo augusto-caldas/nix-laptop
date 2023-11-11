@@ -109,7 +109,6 @@ in
       kdenlive
       krita
       libreoffice
-      hunspellDicts.en-gb-ise # Spellcheck for libreoffice
       mpv
       mysql-workbench
       nextcloud-client
@@ -144,7 +143,9 @@ in
       gaphor
       komikku
       video-trimmer
-
+      
+      # Others
+      hunspellDicts.en-gb-ise # Spellcheck for libreofficentfs3g
     ] ++ 
     # Add the unfree packages to the user
     unfreePackages;
@@ -152,9 +153,12 @@ in
   
   # Install global packages
   environment.systemPackages = with pkgs; [
-    (python3.withPackages(ps: with ps; [ numpy pandas ]))
+    python3
+    ntfs3g
     jdk
-    tmux git htop
+    tmux 
+    git 
+    htop
     wget
     tree
   ];
