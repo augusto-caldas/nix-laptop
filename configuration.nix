@@ -12,7 +12,7 @@ let
       withVencord = true;
     })
     spotify
-    # Install jetbrains IDE
+    # Install jetbrains IDEs
     android-studio
     jetbrains.clion
     jetbrains.datagrip
@@ -140,8 +140,10 @@ in
       nodejs
       R
       rustc
+      python3
+      jdk
 
-      # Gnome
+      # Gnome applications
       gnome.gnome-tweaks
       gnome-decoder
       drawing
@@ -153,7 +155,7 @@ in
       video-trimmer
       
       # Others
-      hunspellDicts.en-gb-ise # Spellcheck for libreofficentfs3g
+      hunspellDicts.en-gb-ise # Spellcheck for libreoffice
     ] ++ 
     # Add the unfree packages to the user
     unfreePackages;
@@ -161,9 +163,7 @@ in
   
   # Install global packages
   environment.systemPackages = with pkgs; [
-    python3
     ntfs3g
-    jdk
     tmux 
     git 
     htop
