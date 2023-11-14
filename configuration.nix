@@ -12,6 +12,14 @@ let
       withVencord = true;
     })
     spotify
+    # Install jetbrains IDE
+    android-studio
+    jetbrains.clion
+    jetbrains.datagrip
+    jetbrains.idea-ultimate
+    jetbrains.phpstorm
+    jetbrains.pycharm-professional
+    jetbrains.webstorm
     jetbrains-toolbox
   ];
 
