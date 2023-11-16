@@ -12,14 +12,6 @@ let
       withVencord = true;
     })
     spotify
-    # Install jetbrains IDEs
-    android-studio
-    jetbrains.clion
-    jetbrains.datagrip
-    jetbrains.idea-ultimate
-    jetbrains.phpstorm
-    jetbrains.pycharm-professional
-    jetbrains.webstorm
     jetbrains-toolbox
   ];
 
@@ -136,14 +128,14 @@ in
       neovim
 
       # Compilers / Interpreters / Runtime
-      gcc
-      nodejs
-      R
-      rustc
-      python3
-      jdk
+      cmake gcc 	# C
+      cargo rustc 	# Rust
+      go		# Go
+      jdk 		# Java
+      nodejs 		# Javascript
+      python3 		# Python
 
-      # Gnome applications
+      # Gnome Applications
       gnome.gnome-tweaks
       gnome-decoder
       drawing
@@ -151,9 +143,8 @@ in
       emblem
       fragments
       gaphor
-      komikku
       video-trimmer
-      
+
       # Others
       hunspellDicts.en-gb-ise # Spellcheck for libreoffice
     ] ++ 
