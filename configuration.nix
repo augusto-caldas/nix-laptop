@@ -119,6 +119,7 @@ in
       wireshark
 
       # Terminal applications
+      kitty
       docker-compose
       mongosh
       mysql-shell
@@ -130,7 +131,6 @@ in
       # Compilers / Interpreters / Runtime
       cmake gcc 	# C
       cargo rustc 	# Rust
-      go		# Go
       jdk 		# Java
       nodejs 		# Javascript
       python3 		# Python
