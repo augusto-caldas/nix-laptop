@@ -13,6 +13,7 @@ let
     })
     spotify
     jetbrains-toolbox
+    zoom-us
   ];
 
 in
@@ -43,6 +44,9 @@ in
   networking.firewall.enable = true;
   networking.firewall.checkReversePath = "loose";
 
+  # Avahi multicast
+  services.avahi.enable = true;
+
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
   
@@ -65,6 +69,7 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.gutenprint pkgs.brlaser ];
 
   # Enable sound
   services.pipewire = {
@@ -104,6 +109,8 @@ in
 
       # GUI applications
       chromium
+      cura
+      drawio
       gimp
       jellyfin-media-player
       kdenlive
@@ -117,6 +124,7 @@ in
       virt-manager
       vlc
       wireshark
+      moonlight-qt
 
       # Terminal applications
       kitty
@@ -129,20 +137,23 @@ in
       neovim
 
       # Compilers / Interpreters / Runtime
-      cmake gcc 	# C
-      cargo rustc 	# Rust
-      jdk 		# Java
-      nodejs 		# Javascript
-      python3 		# Python
+      android-tools scrcpy		# Android
+      arduino micronucleus		# Arduino
+      cmake gcc 			# C
+      cargo rustc 			# Rust
+      jdk spring-boot-cli gradle maven	# Java
+      nodejs 				# Javascript
+      python3 				# Python
 
       # Gnome Applications
-      gnome.gnome-tweaks
       gnome-decoder
       drawing
       eyedropper
       emblem
       fragments
       gaphor
+      komikku
+      gnome.gnome-tweaks
       video-trimmer
 
       # Others
