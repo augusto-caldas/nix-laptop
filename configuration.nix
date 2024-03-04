@@ -14,6 +14,10 @@ let
     spotify
     jetbrains-toolbox
     zoom-us
+    # Installing steam and steam-run
+    steam
+    steam-run
+    steamPackages.steam
   ];
 
 in
@@ -43,9 +47,6 @@ in
   # Firewall
   networking.firewall.enable = true;
   networking.firewall.checkReversePath = "loose";
-
-  # Avahi multicast
-  services.avahi.enable = true;
 
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
@@ -121,6 +122,7 @@ in
       nextcloud-client
       obs-studio
       thunderbird
+      tor-browser
       virt-manager
       vlc
       wireshark
@@ -146,6 +148,7 @@ in
       python3 				# Python
 
       # Gnome Applications
+      gnome.cheese
       gnome-decoder
       drawing
       eyedropper
