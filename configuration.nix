@@ -14,6 +14,8 @@ let
     spotify
     jetbrains-toolbox
     zoom-us
+    # Driver for printing
+    brgenml1lpr
     # Installing steam and steam-run
     steam
     steam-run
@@ -67,10 +69,33 @@ in
 
   # Set your time zone.
   time.timeZone = "Europe/Dublin";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint pkgs.brlaser ];
+ 
+  # Enable printing
+  services.printing = {
+    enable = true;
+    browsing = true;
+    logLevel = "debug";
+    # Extra configuration
+    browsedConf = "
+      BrowseDNSSDSubTypes _cups,_print
+      BrowseLocalProtocols All
+      BrowseRemoteProtocols All
+      BrowseProtocols All
+      CreateIPPPrinterQueues All
+      CreateIPPPrinterQueues driverless
+    ";
+    # Setting drivers from list
+    drivers = with pkgs; [
+      cups-zj-58
+      brlaser
+      gutenprint
+    ] ++ (if pkgs.stdenv.hostPlatform.isx86_64 then [
+      gutenprintBin
+    ] else []) ++ (if (!pkgs.stdenv.hostPlatform.isAarch) then [
+      brgenml1lpr
+      brgenml1cupswrapper
+    ]  else []);
+  };
 
   # Enable sound
   services.pipewire = {
@@ -185,4 +210,3 @@ in
   system.stateVersion = "23.05";
 
 }
-
