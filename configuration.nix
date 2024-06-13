@@ -137,6 +137,7 @@ in
       chromium
       cura
       drawio
+      evolution
       gimp
       jellyfin-media-player
       kdenlive
@@ -146,7 +147,6 @@ in
       mysql-workbench
       nextcloud-client
       obs-studio
-      thunderbird
       tor-browser
       virt-manager
       vlc
