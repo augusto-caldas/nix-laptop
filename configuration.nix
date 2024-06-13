@@ -179,7 +179,6 @@ in
       eyedropper
       emblem
       fragments
-      gaphor
       komikku
       gnome.gnome-tweaks
       video-trimmer
