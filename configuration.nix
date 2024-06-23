@@ -97,6 +97,24 @@ in
     ]  else []);
   };
 
+  # Enable ssh server
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = true;
+  };
+  systemd.services = {
+    sshd = {
+      wantedBy = lib.mkForce [];
+      restartTriggers = lib.mkForce [];
+    };
+  };
+  networking.firewall.allowedTCPPorts = [22];
+
+  # Enable steam
+  programs.steam = {
+    enable = true;
+  };
+
   # Enable sound
   services.pipewire = {
     enable = true;
