@@ -7,12 +7,12 @@ let
 
   # List of the unfree packages needed
   unfreePackages = with pkgs; [
+    # Development tools
     mongodb-compass
-    (pkgs.discord.override {
-      withVencord = true;
-    })
-    spotify
     jetbrains-toolbox
+    # Programs
+    discord
+    spotify
     zoom-us
     # Driver for printing
     brgenml1lpr
@@ -152,8 +152,8 @@ in
     packages = with pkgs; [
 
       # GUI applications
-      chromium
       cura
+      chromium
       drawio
       evolution
       gimp
@@ -177,6 +177,7 @@ in
       mongosh
       mysql-shell
       speedtest-cli
+      vesktop
 
       # Editors / IDEs
       neovim
