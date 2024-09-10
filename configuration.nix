@@ -7,19 +7,23 @@ let
 
   # List of the unfree packages needed
   unfreePackages = with pkgs; [
-    # Development tools
-    mongodb-compass
-    jetbrains-toolbox
-    # Programs
-    discord
+
+    # Applications
     spotify
     zoom-us
-    # Driver for printing
-    brgenml1lpr
-    # Installing steam and steam-run
+
+    # Development tools
+    mongodb-compass	# Database
+    jetbrains-toolbox	# IDEs
+    
+    # Steam
     steam
     steam-run
     steamPackages.steam
+    
+    # Drivers
+    brgenml1lpr
+
   ];
 
 in
@@ -151,60 +155,52 @@ in
     shell = pkgs.fish;
     packages = with pkgs; [
 
-      # GUI applications
+      # Applications
       cura
       chromium
+      drawing
       drawio
       evolution
+      eyedropper
+      emblem
+      feishin
+      firefox
+      fragments
       gimp
+      gnome.cheese
+      gnome-decoder
+      gnome.gnome-tweaks
       jellyfin-media-player
       kdenlive
       krita
+      komikku
       libreoffice
       mpv
       mysql-workbench
       nextcloud-client
       obs-studio
-      tor-browser
+      vesktop
+      video-trimmer
       virt-manager
       vlc
-      wireshark
       moonlight-qt
 
-      # Terminal applications
-      kitty
-      docker-compose
-      mongosh
-      mysql-shell
-      speedtest-cli
-      vesktop
+      # Development tools
+      android-tools scrcpy			# Android
+      arduino micronucleus			# Arduino
+      qemu gcc-arm-embedded             	# ARM
+      cmake gcc 				# C
+      mysql-workbench mysql-shell mongosh	# Database
+      docker-compose				# Docker
+      neovim vscodium				# Editors
+      insomnia wireshark			# Network
+      cargo rustc 				# Rust
+      jdk gradle maven				# Java
+      nodejs 					# Javascript
+      python3 					# Python
 
-      # Editors / IDEs
-      neovim
+    ] ++
 
-      # Compilers / Interpreters / Runtime
-      android-tools scrcpy		# Android
-      arduino micronucleus		# Arduino
-      cmake gcc 			# C
-      cargo rustc 			# Rust
-      jdk spring-boot-cli gradle maven	# Java
-      nodejs 				# Javascript
-      python3 				# Python
-
-      # Gnome Applications
-      gnome.cheese
-      gnome-decoder
-      drawing
-      eyedropper
-      emblem
-      fragments
-      komikku
-      gnome.gnome-tweaks
-      video-trimmer
-
-      # Others
-      hunspellDicts.en-gb-ise # Spellcheck for libreoffice
-    ] ++ 
     # Add the unfree packages to the user
     unfreePackages;
   };
