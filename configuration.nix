@@ -171,6 +171,7 @@ in
       gnome-decoder
       gnome.gnome-tweaks
       jellyfin-media-player
+      joplin-desktop
       kdenlive
       krita
       komikku
@@ -193,6 +194,7 @@ in
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
+      texliveFull texstudio			# LaTeX
       insomnia wireshark			# Network
       cargo rustc 				# Rust
       jdk gradle maven				# Java
