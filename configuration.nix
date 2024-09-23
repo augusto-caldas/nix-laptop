@@ -189,11 +189,11 @@ in
       # Development tools
       android-tools scrcpy			# Android
       arduino micronucleus			# Arduino
-      qemu gcc-arm-embedded             	# ARM
       cmake gcc 				# C
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
+      binwalk gcc-arm-embedded qemu		# Embedded
       texliveFull texstudio			# LaTeX
       insomnia wireshark			# Network
       cargo rustc 				# Rust
