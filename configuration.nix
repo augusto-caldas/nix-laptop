@@ -189,14 +189,15 @@ in
       # Development tools
       android-tools scrcpy			# Android
       arduino micronucleus			# Arduino
-      cmake gcc 				# C
+      cmake gcc gdb				# C
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
-      binwalk gcc-arm-embedded qemu		# Embedded
+      gcc-arm-embedded qemu			# Embedded
       texliveFull texstudio			# LaTeX
       insomnia wireshark			# Network
       cargo rustc 				# Rust
+      binwalk squashfsTools sasquatch		# Security
       jdk gradle maven				# Java
       nodejs 					# Javascript
       python3 					# Python
