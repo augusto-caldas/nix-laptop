@@ -1,3 +1,4 @@
+
 { config, pkgs, lib, ... }:
 let
  
@@ -194,14 +195,13 @@ in
       docker-compose				# Docker
       neovim vscodium				# Editors
       gcc-arm-embedded qemu			# Embedded
+      jdk gradle maven				# Java
+      nodejs					# Javascript
       texliveFull texstudio			# LaTeX
       insomnia wireshark			# Network
+      python3					# Python
       cargo rustc 				# Rust
       binwalk squashfsTools sasquatch		# Security
-      jdk gradle maven				# Java
-      nodejs 					# Javascript
-      python3 					# Python
-
     ] ++
 
     # Add the unfree packages to the user
