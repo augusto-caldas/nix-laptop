@@ -57,7 +57,7 @@ in
 
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
-  
+
   # Setup docker
   virtualisation.docker.enable = true;
 
@@ -171,6 +171,7 @@ in
       gnome.cheese
       gnome-decoder
       gnome.gnome-tweaks
+      inkscape
       jellyfin-media-player
       joplin-desktop
       kdenlive
@@ -183,25 +184,29 @@ in
       obs-studio
       vesktop
       video-trimmer
-      virt-manager
       vlc
       moonlight-qt
 
       # Development tools
       android-tools scrcpy			# Android
       arduino micronucleus			# Arduino
-      cmake gcc gdb				# C
+      cmake gcc glibc gdb			# C
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
       gcc-arm-embedded qemu			# Embedded
       jdk gradle maven				# Java
       nodejs					# Javascript
-      texliveFull texstudio			# LaTeX
+      texliveFull				# LaTeX
       insomnia wireshark			# Network
       python3					# Python
       cargo rustc 				# Rust
       binwalk squashfsTools sasquatch		# Security
+
+      # Development in 32-bit
+      # pkgsi686Linux.gcc
+      # pkgsi686Linux.glibc
+      # pkgsi686Linux.binutils
     ] ++
 
     # Add the unfree packages to the user
