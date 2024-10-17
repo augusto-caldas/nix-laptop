@@ -55,6 +55,9 @@ in
   networking.firewall.enable = true;
   networking.firewall.checkReversePath = "loose";
 
+  # Disable kill X server
+  services.xserver.enableCtrlAltBackspace = false;
+
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
 
@@ -184,6 +187,7 @@ in
       obs-studio
       vesktop
       video-trimmer
+      virt-manager
       vlc
       moonlight-qt
 
