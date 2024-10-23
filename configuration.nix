@@ -191,7 +191,7 @@ in
       # Development tools
       android-tools scrcpy						# Android
       arduino micronucleus						# Arduino
-      # cmake gcc glibc							# C
+      cmake gcc glibc							# C
       # pkgsi686Linux.gcc pkgsi686Linux.glibc pkgsi686Linux.binutils	# C 32-bit
       mysql-workbench mysql-shell mongosh				# Database
       docker-compose							# Docker
