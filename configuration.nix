@@ -189,25 +189,22 @@ in
       moonlight-qt
 
       # Development tools
-      android-tools scrcpy			# Android
-      arduino micronucleus			# Arduino
-      cmake gcc glibc gdb			# C
-      mysql-workbench mysql-shell mongosh	# Database
-      docker-compose				# Docker
-      neovim vscodium				# Editors
-      gcc-arm-embedded qemu			# Embedded
-      jdk gradle maven				# Java
-      nodejs					# Javascript
-      texliveFull				# LaTeX
-      insomnia wireshark			# Network
-      python3					# Python
-      cargo rustc 				# Rust
-      binwalk squashfsTools sasquatch		# Security
+      android-tools scrcpy						# Android
+      arduino micronucleus						# Arduino
+      # cmake gcc glibc							# C
+      # pkgsi686Linux.gcc pkgsi686Linux.glibc pkgsi686Linux.binutils	# C 32-bit
+      mysql-workbench mysql-shell mongosh				# Database
+      docker-compose							# Docker
+      neovim vscodium							# Editors
+      gcc-arm-embedded qemu						# Embedded
+      jdk gradle maven							# Java
+      nodejs								# Javascript
+      texliveFull							# LaTeX
+      insomnia wireshark						# Network
+      python3								# Python
+      cargo rustc 							# Rust
+      binwalk gdb squashfsTools sasquatch				# Security
 
-      # Development in 32-bit
-      # pkgsi686Linux.gcc
-      # pkgsi686Linux.glibc
-      # pkgsi686Linux.binutils
     ] ++
 
     # Add the unfree packages to the user
