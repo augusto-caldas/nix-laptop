@@ -57,6 +57,9 @@ in
 
   # Enable libvirtd
   virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
 
   # Setup docker
   virtualisation.docker.enable = true;
@@ -184,7 +187,6 @@ in
       obs-studio
       vesktop
       video-trimmer
-      virt-manager
       vlc
       moonlight-qt
 
@@ -192,7 +194,6 @@ in
       android-tools scrcpy						# Android
       arduino micronucleus						# Arduino
       cmake gcc glibc							# C
-      # pkgsi686Linux.gcc pkgsi686Linux.glibc pkgsi686Linux.binutils	 # C 32-bit
       mysql-workbench mysql-shell mongosh				# Database
       docker-compose							# Docker
       neovim vscodium							# Editors
