@@ -108,7 +108,7 @@ in
   # Enable ssh server
   services.openssh = {
     enable = true;
-    passwordAuthentication = true;
+    settings.PasswordAuthentication = true;
   };
   systemd.services = {
     sshd = {
