@@ -16,7 +16,8 @@ let
     # Development tools
     mongodb-compass	# Database
     jetbrains-toolbox	# IDEs
-    
+    postman		# Network
+
     # Steam
     steam
     steam-run
@@ -201,7 +202,7 @@ in
       jdk gradle maven							# Java
       nodejs								# Javascript
       texliveFull							# LaTeX
-      insomnia wireshark						# Network
+      wireshark								# Network
       python3								# Python
       cargo rustc 							# Rust
       binwalk gdb squashfsTools sasquatch				# Security
