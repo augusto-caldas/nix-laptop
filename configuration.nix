@@ -39,6 +39,9 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable thunderbolt
+  services.hardware.bolt.enable = true;
+
   # Set boot animation
   boot.plymouth.enable = true;
   boot.initrd = {
