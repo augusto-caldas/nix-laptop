@@ -189,26 +189,28 @@ in
       mysql-workbench
       nextcloud-client
       obs-studio
+      sweethome3d.application
       vesktop
       video-trimmer
       vlc
       moonlight-qt
 
       # Development tools
-      android-tools scrcpy						# Android
-      arduino micronucleus						# Arduino
-      cmake gcc glibc							# C
-      mysql-workbench mysql-shell mongosh				# Database
-      docker-compose							# Docker
-      neovim vscodium							# Editors
-      gcc-arm-embedded qemu						# Embedded
-      jdk gradle maven							# Java
-      nodejs								# Javascript
-      texliveFull							# LaTeX
-      wireshark								# Network
-      python3								# Python
-      cargo rustc 							# Rust
-      binwalk gdb squashfsTools sasquatch				# Security
+      android-tools scrcpy			# Android
+      arduino micronucleus			# Arduino
+      cmake gcc glibc				# C
+      mysql-workbench mysql-shell mongosh	# Database
+      docker-compose				# Docker
+      neovim vscodium				# Editors
+      gcc-arm-embedded qemu			# Embedded
+      jdk gradle maven				# Java
+      nodejs					# Javascript
+      texliveFull				# LaTeX
+      wireshark					# Network
+      python3					# Python
+      cargo rustc 				# Rust
+      scala sbt					# Scala			
+      binwalk gdb squashfsTools sasquatch	# Security
 
     ] ++
 
