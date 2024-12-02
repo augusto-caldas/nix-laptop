@@ -10,8 +10,8 @@ let
   unfreePackages = with pkgs; [
 
     # Applications
+    drawio
     spotify
-    zoom-us
 
     # Development tools
     mongodb-compass	# Database
@@ -21,11 +21,10 @@ let
     # Steam
     steam
     steam-run
-    steamPackages.steam
+    steam-unwrapped
     
     # Drivers
     brgenml1lpr
-
   ];
 
 in
@@ -164,10 +163,8 @@ in
     packages = with pkgs; [
 
       # Applications
-      cura
       chromium
       drawing
-      drawio
       evolution
       eyedropper
       emblem
@@ -175,9 +172,9 @@ in
       firefox
       fragments
       gimp
-      gnome.cheese
+      cheese
       gnome-decoder
-      gnome.gnome-tweaks
+      gnome-tweaks
       inkscape
       jellyfin-media-player
       joplin-desktop
@@ -209,7 +206,7 @@ in
       wireshark					# Network
       python3					# Python
       cargo rustc 				# Rust
-      scala sbt					# Scala			
+      scala_3 sbt				# Scala			
       binwalk gdb squashfsTools sasquatch	# Security
 
     ] ++
