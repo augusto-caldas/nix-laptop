@@ -41,6 +41,10 @@ in
   # Enable thunderbolt
   services.hardware.bolt.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Set boot animation
   boot.plymouth.enable = true;
   boot.initrd = {
