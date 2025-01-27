@@ -199,7 +199,7 @@ in
       # Development tools
       android-tools scrcpy			# Android
       arduino micronucleus			# Arduino
-      cmake gcc glibc				# C
+      cmake gcc glibc gnumake			# C
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
@@ -233,6 +233,11 @@ in
   nixpkgs.config.allowUnfreePredicate = let
     packageNames = map (eachPackage: lib.getName eachPackage) unfreePackages;
   in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;
+
+  # Set up unsafe packages
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-31.7.7"
+  ];
 
   # Installed version
   system.stateVersion = "23.05";
