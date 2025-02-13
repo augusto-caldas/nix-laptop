@@ -204,7 +204,7 @@ in
       # Development tools
       android-tools scrcpy			# Android
       arduino micronucleus			# Arduino
-      cmake gnumake gcc glibc gnumake		# C
+      cmake gcc glibc gnumake			# C
       mysql-workbench mysql-shell mongosh	# Database
       docker-compose				# Docker
       neovim vscodium				# Editors
