@@ -191,6 +191,7 @@ in
       nextcloud-client
       obs-studio
       sweethome3d.application
+      tor-browser
       vesktop
       video-trimmer
       vlc
@@ -199,6 +200,7 @@ in
       # Setting emulator
       (retroarch.override { cores = with libretro; [
         mgba
+        bsnes
       ]; })
 
       # Development tools
