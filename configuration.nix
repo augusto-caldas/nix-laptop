@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, ... }:
 let
  
@@ -208,7 +207,7 @@ in
       arduino micronucleus			# Arduino
       cmake gcc glibc gnumake			# C
       mysql-workbench mysql-shell mongosh	# Database
-      docker-compose				# Docker
+      docker-compose kubernetes			# Docker
       neovim vscodium				# Editors
       gcc-arm-embedded qemu			# Embedded
       jdk gradle maven				# Java
@@ -216,6 +215,7 @@ in
       texliveFull				# LaTeX
       wireshark					# Network
       python3					# Python
+      buf					# Protobuf
       cargo rustc 				# Rust
       scala_3 sbt				# Scala			
       binwalk gdb squashfsTools sasquatch	# Security
