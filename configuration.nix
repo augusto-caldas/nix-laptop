@@ -5,26 +5,11 @@ let
   # Also used for network ID
   hostName = "faron";
 
-  # List of the unfree packages needed
-  unfreePackages = with pkgs; [
-
-    # Applications
-    drawio
-    spotify
-
-    # Development tools
-    mongodb-compass	# Database
-    jetbrains-toolbox	# IDEs
-    postman		# Network
-
-    # Steam
-    steam
-    steam-run
-    steam-unwrapped
-
-    # Drivers
-    brgenml1lpr
-  ];
+  # Importing package sets
+  applicationPackages = import ./packages/application-packages.nix { inherit pkgs; };
+  developmentPackages = import ./packages/development-packages.nix { inherit pkgs; };
+  globalPackages = import ./packages/global-packages.nix { inherit pkgs; };
+  unfreePackages = import ./packages/unfree-packages.nix { inherit pkgs; };
 
 in
 {
@@ -163,78 +148,11 @@ in
       "adbusers"
     ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-
-      # Applications
-      chromium
-      drawing
-      evolution
-      eyedropper
-      emblem
-      feishin
-      firefox
-      fragments
-      gimp
-      cheese
-      gnome-decoder
-      gnome-tweaks
-      inkscape
-      jellyfin-media-player
-      joplin-desktop
-      kdenlive
-      krita
-      komikku
-      libreoffice
-      mpv
-      mysql-workbench
-      nextcloud-client
-      obs-studio
-      sweethome3d.application
-      tor-browser
-      vesktop
-      video-trimmer
-      vlc
-      moonlight-qt
-
-      # Setting emulator
-      (retroarch.override { cores = with libretro; [
-        mgba
-        bsnes
-      ]; })
-
-      # Development tools
-      android-tools scrcpy			# Android
-      arduino micronucleus			# Arduino
-      cmake gcc glibc gnumake			# C
-      mysql-workbench mysql-shell mongosh	# Database
-      docker-compose kubernetes			# Docker
-      neovim vscodium				# Editors
-      gcc-arm-embedded qemu			# Embedded
-      jdk gradle maven				# Java
-      nodejs					# Javascript
-      texliveFull				# LaTeX
-      wireshark					# Network
-      python3					# Python
-      buf					# Protobuf
-      cargo rustc 				# Rust
-      scala_3 sbt				# Scala			
-      binwalk gdb squashfsTools sasquatch	# Security
-
-    ] ++
-
-    # Add the unfree packages to the user
-    unfreePackages;
+    packages = applicationPackages ++ developmentPackages ++ unfreePackages;
   };
   
   # Install global packages
-  environment.systemPackages = with pkgs; [
-    ntfs3g
-    tmux 
-    git 
-    htop
-    wget
-    tree
-  ];
+  environment.systemPackages = globalPackages;
   
   # Set up unfree packages
   nixpkgs.config.allowUnfreePredicate = let
