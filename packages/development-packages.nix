@@ -18,6 +18,8 @@ with pkgs; [
   # Docker
   docker-compose
   kubernetes
+  kubernetes-helm
+  minikube
   # Editors
   neovim
   vscodium

@@ -21,6 +21,7 @@ with pkgs; [
   krita
   joplin-desktop
   libreoffice
+  libresprite
   sweethome3d.application
   video-trimmer
   # Games
