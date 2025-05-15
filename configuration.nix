@@ -70,31 +70,13 @@ in
   time.timeZone = "Europe/Dublin";
  
   # Enable printing
-  services.printing = {
+  services.printing.enable = true;
+  services.avahi = {
     enable = true;
-    browsing = true;
-    logLevel = "debug";
-    # Extra configuration
-    browsedConf = "
-      BrowseDNSSDSubTypes _cups,_print
-      BrowseLocalProtocols All
-      BrowseRemoteProtocols All
-      BrowseProtocols All
-      CreateIPPPrinterQueues All
-      CreateIPPPrinterQueues driverless
-    ";
-    # Setting drivers from list
-    drivers = with pkgs; [
-      cups-zj-58
-      brlaser
-      gutenprint
-    ] ++ (if pkgs.stdenv.hostPlatform.isx86_64 then [
-      gutenprintBin
-    ] else []) ++ (if (!pkgs.stdenv.hostPlatform.isAarch) then [
-      brgenml1lpr
-      brgenml1cupswrapper
-    ]  else []);
+    nssmdns4 = true;
+    openFirewall = true;
   };
+  services.printing.drivers = [ pkgs.brlaser ];
 
   # Enable ssh server
   services.openssh = {
