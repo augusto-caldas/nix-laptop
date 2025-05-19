@@ -17,7 +17,7 @@ with pkgs; [
   drawing
   gimp
   inkscape
-  kdenlive
+  kdePackages.kdenlive
   krita
   joplin-desktop
   libreoffice
@@ -26,14 +26,11 @@ with pkgs; [
   video-trimmer
   # Games
   moonlight-qt
-  (retroarch.override {
-    cores = with libretro; [
+  (retroarch.withCores (cores: with cores; [
         beetle-psx  # PS1
         mgba        # GBA
         bsnes       # SNES
-      ];
-    }
-  )
+  ]))
   # Tools
   evolution
   eyedropper

@@ -105,7 +105,7 @@ in
     pulse.enable = true;
     jack.enable = true;
   };
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   nixpkgs.config.pulseaudio = true;
   
   # Graphical Interface

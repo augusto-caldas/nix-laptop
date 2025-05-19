@@ -1,9 +1,11 @@
 { pkgs }:
 with pkgs; [
-  ntfs3g
-  tmux
+  # Tools
   git
   htop
-  wget
+  tmux
   tree
+  wget
+  # Driver
+  ntfs3g
 ]
