@@ -13,6 +13,7 @@ with pkgs; [
   obs-studio
   vesktop
   vlc
+  yt-dlp
   # Editors
   drawing
   gimp

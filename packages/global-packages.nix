@@ -3,7 +3,6 @@ with pkgs; [
   # Tools
   git
   htop
-  gtop
   tmux
   tree
   wget
