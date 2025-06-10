@@ -1,7 +1,6 @@
 { pkgs }:
 with pkgs; [
   # Android
-  android-tools
   scrcpy
   # Arduino
   arduino

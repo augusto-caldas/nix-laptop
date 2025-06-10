@@ -1,9 +1,7 @@
 { pkgs }:
 with pkgs; [
   # Browsers
-  chromium
-  firefox
-  tor-browser
+  brave
   # Media
   cheese
   feishin
