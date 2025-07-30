@@ -1,9 +1,11 @@
 { pkgs }:
 with pkgs; [
   # Android
+  android-tools
   scrcpy
-  # Arduino
+  # Microprocessor
   arduino
+  logisim
   micronucleus
   # C
   cmake

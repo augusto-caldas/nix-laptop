@@ -2,6 +2,7 @@
 with pkgs; [
   # Browsers
   brave
+  firefox
   # Media
   cheese
   feishin

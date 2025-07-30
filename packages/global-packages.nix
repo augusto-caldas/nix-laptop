@@ -3,6 +3,7 @@ with pkgs; [
   # Tools
   git
   htop
+  iperf
   tmux
   tree
   wget
