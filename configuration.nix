@@ -142,6 +142,5 @@ in
   in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;
 
   # Installed version
-  system.stateVersion = "23.05";
-
+  system.stateVersion = "25.05";
 }
