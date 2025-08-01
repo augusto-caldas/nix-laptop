@@ -22,8 +22,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable thunderbolt
-  services.hardware.bolt.enable = true;
+  # Enable firmware update
+  services.fwupd.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -65,6 +65,10 @@ in
     SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
     SYSTEM_CERTIFICATE_PATH = "/etc/ssl/certs/ca-bundle.crt";
   };
+
+  # Enable fingerprint
+  services.fprintd.enable = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Dublin";
