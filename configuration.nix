@@ -38,7 +38,7 @@ in
     systemd.enable = true;
     verbose = false;
   };
-  boot.kernelParams = [ "quiet" "splash" "mem_sleep_default=deep" ];
+  boot.kernelParams = [ "quiet" "splash" ];
   boot.consoleLogLevel = 0;
 
   # Lock screen when lid close
