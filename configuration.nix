@@ -25,6 +25,9 @@ in
   # Enable firmware update
   services.fwupd.enable = true;
 
+  # Enable thunderbolt
+  services.hardware.bolt.enable = true;
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -35,9 +38,14 @@ in
     systemd.enable = true;
     verbose = false;
   };
-  boot.kernelParams = [ "quiet" "splash" ];
+  boot.kernelParams = [ "quiet" "splash" "mem_sleep_default=deep" ];
   boot.consoleLogLevel = 0;
 
+  # Lock screen when lid close
+  services.logind.lidSwitch = "lock";
+  services.logind.lidSwitchDocked = "lock";
+  services.logind.lidSwitchExternalPower = "lock";
+  
   # Define your hostname
   networking.hostName = hostName;
   networking.hostId = builtins.substring 0 8 (builtins.hashString "sha512" hostName);
