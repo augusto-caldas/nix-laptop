@@ -14,34 +14,37 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "tear/root";
-      fsType = "zfs";
-    };
-
-  fileSystems."/nix" =
-    { device = "tear/nix";
+    { device = "tear/safe/root";
       fsType = "zfs";
     };
 
   fileSystems."/home" =
-    { device = "tear/home";
+    { device = "tear/safe/home";
       fsType = "zfs";
     };
 
   fileSystems."/tmp" =
-    { device = "tear/tmp";
+    { device = "tear/safe/tmp";
+      fsType = "zfs";
+    };
+
+  fileSystems."/nix" =
+    { device = "tear/safe/nix";
       fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8C6E-74CC";
+    { device = "/dev/disk/by-uuid/6FBC-5BCD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/816e5b96-a6aa-4e1f-a2d5-106cc9876f94"; }
-    ];
+  swapDevices = [
+    {
+      device = "/dev/disk/by-partuuid/62fbee7a-afe0-488d-a99d-64bcaccda142";
+      randomEncryption.enable = true;
+    }
+  ];
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
