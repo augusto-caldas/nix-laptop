@@ -13,10 +13,15 @@ let
 
 in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ 
+    # Import nixos-hardware (Broken packages, wait until fix)
+    <nixos-hardware/framework/13-inch/amd-ai-300-series>
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+  
+  # Override linuxPackages in nixos-hardware to a stable version
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_15;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -41,8 +46,7 @@ in
   boot.kernelParams = [ "quiet" "splash" ];
   boot.consoleLogLevel = 0;
 
-  # Lock screen when lid close
-  services.logind.lidSwitch = "lock";
+  # Lock screen on lid close when connected
   services.logind.lidSwitchDocked = "lock";
   services.logind.lidSwitchExternalPower = "lock";
   
