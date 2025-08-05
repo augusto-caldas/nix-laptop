@@ -14,7 +14,7 @@ let
 in
 {
   imports = [ 
-    # Import nixos-hardware (Broken packages, wait until fix)
+    # Import nixos-hardware
     <nixos-hardware/framework/13-inch/amd-ai-300-series>
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -45,10 +45,6 @@ in
   };
   boot.kernelParams = [ "quiet" "splash" ];
   boot.consoleLogLevel = 0;
-
-  # Lock screen on lid close when connected
-  services.logind.lidSwitchDocked = "lock";
-  services.logind.lidSwitchExternalPower = "lock";
   
   # Define your hostname
   networking.hostName = hostName;
