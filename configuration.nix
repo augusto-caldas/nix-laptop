@@ -15,7 +15,7 @@ in
 {
   imports = [ 
     # Import nixos-hardware
-    <nixos-hardware/framework/13-inch/amd-ai-300-series>
+    "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/framework/13-inch/amd-ai-300-series"
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
