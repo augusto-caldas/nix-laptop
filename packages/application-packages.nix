@@ -10,6 +10,7 @@ with pkgs; [
   komikku
   mpv
   obs-studio
+  streamlink
   vesktop
   vlc
   yt-dlp
@@ -26,6 +27,7 @@ with pkgs; [
   video-trimmer
   # Games
   moonlight-qt
+  ruffle
   (retroarch.withCores (cores: with cores; [
         beetle-psx  # PS1
         mgba        # GBA
@@ -38,4 +40,5 @@ with pkgs; [
   nextcloud-client
   gnome-decoder
   gnome-tweaks
+  woeusb
 ]
