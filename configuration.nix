@@ -19,9 +19,6 @@ in
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-  
-  # Override linuxPackages in nixos-hardware to a stable version
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_15;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
