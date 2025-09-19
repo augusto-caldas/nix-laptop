@@ -63,6 +63,12 @@ in
   # Networking
   networking.networkmanager.enable = true;
 
+  # Define regulatory domain
+  hardware.wirelessRegulatoryDatabase = true;
+  boot.extraModprobeConfig = ''
+    options cfg80211 ieee80211_regdom="IE"
+  '';
+
   # Install custom CA certificate
   security.pki.certificateFiles = [ ./ca.pem ];
   environment.sessionVariables = {
