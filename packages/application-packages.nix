@@ -3,6 +3,7 @@ with pkgs; [
   # Browsers
   brave
   firefox
+  tor-browser
   # Media
   cheese
   feishin
