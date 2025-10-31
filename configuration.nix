@@ -21,7 +21,7 @@ in
   ];
 
   # Override linuxPackages in nixos-hardware to a stable version
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_16;
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_12;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
