@@ -12,6 +12,7 @@ with pkgs; [
   gcc
   glibc
   gnumake
+  perl
   # Database
   mongosh
   mysql-shell
