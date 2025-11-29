@@ -131,8 +131,8 @@ in
   
   # Graphical Interface
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Setup fish shell
   programs.fish.enable = true;
@@ -161,6 +161,11 @@ in
   nixpkgs.config.allowUnfreePredicate = let
     packageNames = map (eachPackage: lib.getName eachPackage) unfreePackages;
   in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;
+
+  # Set up broken packages
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebengine-5.15.19" # Used by jellyfin-media-player
+  ];
 
   # Installed version
   system.stateVersion = "25.05";

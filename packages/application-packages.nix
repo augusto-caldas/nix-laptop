@@ -7,7 +7,7 @@ with pkgs; [
   # Media
   cheese
   feishin
-  jellyfin-media-player
+  jellyfin-media-player  
   komikku
   mpv
   obs-studio
@@ -19,9 +19,9 @@ with pkgs; [
   drawing
   gimp
   inkscape
+  joplin-desktop
   kdePackages.kdenlive
   krita
-  joplin-desktop
   libreoffice
   libresprite
   sweethome3d.application
