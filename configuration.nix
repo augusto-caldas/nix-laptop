@@ -134,6 +134,19 @@ in
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Setting fonts
+  fonts = {
+    fontconfig.enable = true;
+
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      ipafont
+    ];
+  };
+
   # Setup fish shell
   programs.fish.enable = true;
   environment.shells = with pkgs; [ fish ];
@@ -161,11 +174,6 @@ in
   nixpkgs.config.allowUnfreePredicate = let
     packageNames = map (eachPackage: lib.getName eachPackage) unfreePackages;
   in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;
-
-  # Set up broken packages
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebengine-5.15.19" # Used by jellyfin-media-player
-  ];
 
   # Installed version
   system.stateVersion = "25.05";

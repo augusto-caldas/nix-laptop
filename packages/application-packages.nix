@@ -7,7 +7,7 @@ with pkgs; [
   # Media
   cheese
   feishin
-  jellyfin-media-player  
+  #jellyfin-media-player  
   komikku
   mpv
   obs-studio
