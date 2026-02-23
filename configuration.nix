@@ -89,7 +89,16 @@ in
 
   # Set your time zone.
   time.timeZone = "Europe/Dublin";
- 
+
+  # Set locale
+  i18n = {
+    defaultLocale = "en_IE.UTF-8";
+    supportedLocales = [
+      "en_IE.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+    ];
+  };
+
   # Enable printing
   services.printing.enable = true;
   services.avahi = {
@@ -97,7 +106,9 @@ in
     nssmdns4 = true;
     openFirewall = true;
   };
-  services.printing.drivers = [ pkgs.brlaser ];
+  services.printing.drivers = [ 
+    pkgs.brlaser
+  ];
 
   # Enable ssh server
   services.openssh = {

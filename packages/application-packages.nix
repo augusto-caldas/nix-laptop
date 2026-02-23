@@ -28,6 +28,7 @@ with pkgs; [
   video-trimmer
   # Games
   moonlight-qt
+  prismlauncher
   ruffle
   (retroarch.withCores (cores: with cores; [
         beetle-psx  # PS1
