@@ -10,7 +10,9 @@ with pkgs; [
   pciutils
   tmux
   tree
+  unzip
   wget
+  zip
   # Driver
   ntfs3g
 ]

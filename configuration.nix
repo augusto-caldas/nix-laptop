@@ -180,11 +180,11 @@ in
   
   # Install global packages
   environment.systemPackages = globalPackages;
-  
+
   # Set up unfree packages
   nixpkgs.config.allowUnfreePredicate = let
     packageNames = map (eachPackage: lib.getName eachPackage) unfreePackages;
-  in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;
+  in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;  
 
   # Installed version
   system.stateVersion = "25.05";
