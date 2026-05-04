@@ -39,6 +39,7 @@ with pkgs; [
   evolution
   eyedropper
   fragments
+  neofetch
   nextcloud-client
   gnome-decoder
   gnome-tweaks
