@@ -13,18 +13,18 @@ let
 
 in
 {
+  # Import nixos-hardware
   imports = [ 
-    # Import nixos-hardware
     "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/framework/13-inch/amd-ai-300-series"
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # Override linuxPackages in nixos-hardware to a stable version
+  # Set kernel to LTS version
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_18;
 
-  # Use latest zfs version
+  # Configure ZFS
   boot.zfs.package = lib.mkForce pkgs.zfs_2_4;
+  boot.zfs.forceImportRoot = false;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -37,8 +37,19 @@ in
   services.hardware.bolt.enable = true;
 
   # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
 
   # Set boot animation
   boot.plymouth.enable = true;
@@ -71,7 +82,7 @@ in
 
   # Define regulatory domain
   hardware.wirelessRegulatoryDatabase = true;
-  boot.extraModprobeConfig = ''
+  boot.extraModprobeConfig = lib.mkForce ''
     options cfg80211 ieee80211_regdom="IE"
   '';
 
