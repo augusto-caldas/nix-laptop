@@ -7,7 +7,13 @@ with pkgs; [
   # Media
   cheese
   feishin
-  jellyfin-media-player  
+  (jellyfin-desktop.overrideAttrs (oldAttrs: {
+    nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [ pkgs.makeBinaryWrapper ];
+    postInstall = (oldAttrs.postInstall or "") + ''
+      wrapProgram $out/bin/jellyfin-desktop \
+        --set QT_QPA_PLATFORM xcb
+    '';
+  }))
   komikku
   mpv
   obs-studio
