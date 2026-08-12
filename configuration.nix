@@ -192,7 +192,7 @@ in
 
   # Set up unfree packages
   nixpkgs.config.allowUnfreePredicate = let
-    packageNames = map (eachPackage: lib.getName eachPackage) unfreePackages;
+    packageNames = map (eachPackage: lib.getName eachPackage) (gamePackages ++ unfreePackages);
   in pkgIn: builtins.elem (lib.getName pkgIn) packageNames;  
 
   # Installed version

@@ -6,9 +6,4 @@ with pkgs; [
   # Development tools
   jetbrains-toolbox     # IDEs
   postman               # Network
-
-  # Steam
-  steam
-  steam-run
-  steam-unwrapped
 ]
