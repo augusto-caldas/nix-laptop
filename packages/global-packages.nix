@@ -16,6 +16,7 @@ with pkgs; [
   unzip
   wget
   zip
+
   # Driver
   ntfs3g
 ]

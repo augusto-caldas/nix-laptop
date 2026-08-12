@@ -8,6 +8,7 @@ let
   # Importing package sets
   applicationPackages = import ./packages/application-packages.nix { inherit pkgs; };
   developmentPackages = import ./packages/development-packages.nix { inherit pkgs; };
+  gamePackages = import ./packages/game-packages.nix { inherit pkgs; };
   globalPackages = import ./packages/global-packages.nix { inherit pkgs; };
   unfreePackages = import ./packages/unfree-packages.nix { inherit pkgs; };
 
@@ -21,9 +22,6 @@ in
 
   # Set kernel to LTS version
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_18;
-
-  # Configure ZFS
-  boot.zfs.package = lib.mkForce pkgs.zfs_2_4;
   boot.zfs.forceImportRoot = false;
 
   # Use the systemd-boot EFI boot loader.
@@ -186,7 +184,7 @@ in
       "adbusers"
     ];
     shell = pkgs.fish;
-    packages = applicationPackages ++ developmentPackages ++ unfreePackages;
+    packages = applicationPackages ++ developmentPackages ++ gamePackages ++ unfreePackages;
   };
   
   # Install global packages

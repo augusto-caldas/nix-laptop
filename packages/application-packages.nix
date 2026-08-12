@@ -4,6 +4,7 @@ with pkgs; [
   brave
   firefox
   tor-browser
+
   # Media
   cheese
   feishin
@@ -14,6 +15,7 @@ with pkgs; [
         --set QT_QPA_PLATFORM xcb
     '';
   }))
+  jellyfin-mpv-shim
   komikku
   mpv
   obs-studio
@@ -21,6 +23,7 @@ with pkgs; [
   vesktop
   vlc
   yt-dlp
+
   # Editors
   drawing
   gimp
@@ -32,15 +35,7 @@ with pkgs; [
   libresprite
   sweethome3d.application
   video-trimmer
-  # Games
-  moonlight-qt
-  prismlauncher
-  ruffle
-  (retroarch.withCores (cores: with cores; [
-        beetle-psx  # PS1
-        mgba        # GBA
-        bsnes       # SNES
-  ]))
+
   # Tools
   evolution
   eyedropper
