@@ -5,10 +5,6 @@ with pkgs; [
   ruffle            # Flash
 
   # Recompiled
-  n64recomp
-  bk_rom_compressor
-  banjorecomp       # Banjo-Kazooie
-  sm64ex            # Mario 64
   shipwright        # Ocarina of Time
   _2ship2harkinian  # Majora's Mask
 
