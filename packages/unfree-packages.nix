@@ -1,6 +1,7 @@
 { pkgs }:
 with pkgs; [
   # Applications
+  google-chrome
   spotify
 
   # Development tools

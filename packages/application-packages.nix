@@ -1,7 +1,6 @@
 { pkgs }:
 with pkgs; [
   # Browsers
-  brave
   firefox
   tor-browser
 

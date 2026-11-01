@@ -4,10 +4,6 @@ with pkgs; [
   prismlauncher     # Minecraft
   ruffle            # Flash
 
-  # Recompiled
-  shipwright        # Ocarina of Time
-  _2ship2harkinian  # Majora's Mask
-
   # Steam
   steam
   steam-run
